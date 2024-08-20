@@ -18,8 +18,7 @@ public class Database {
 		    Class.forName("oracle.jdbc.driver.OracleDriver");  
 		    
 		    // Step 2: Create the connection object  
-		    Connection con = DriverManager.getConnection(  
-		        "jdbc:oracle:thin:@15.235.207.176:1521/ORCLPDB1", "hr", "hr"); 
+		    Connection con = DriverManager.getConnection("jdbc:oracle:thin:@51.89.167.221:1521/ORCLPDB1", "hr", "hr");
 		    
 		    return con;
 		    
@@ -30,20 +29,5 @@ public class Database {
 	}
 	
 	public ArrayList<String> getEmployees(Connection con){
-		ArrayList<String> list = new ArrayList();
-		try {  
-		    // Step 3: Create the statement object  
-		    Statement stmt = con.createStatement();  
-		    
-		    // Step 4: Execute query  
-		    ResultSet rs = stmt.executeQuery("select * from employees");  
-		    while (rs.next()) { 
-		        list.add(rs.getInt(1) + "  " + rs.getString(2) + "  " + rs.getString(3));  
-		    }  
-		    
-		    return list;
-		} catch (Exception e) {  
-		    return null;  
-		} 
-	}
+x	}
 }
